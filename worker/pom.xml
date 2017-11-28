@@ -24,6 +24,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>web-m2</finalName>
+        <finalName>worker</finalName>
     </build>
 </project>

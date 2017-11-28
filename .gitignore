@@ -10,3 +10,15 @@
 /mobile-web/mobile-web.iml
 /soa/soa.iml
 /soa-client/soa-client.iml
+/admin-web/target/
+/dao/target/
+/domain/target/
+/manager/target/
+/mobile-web/target/
+/pc-web/target/
+/service/target/
+/soa/target/
+/soa-client/target/
+/util/target/
+/worker/target/
+/module-demo.iml

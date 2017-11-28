@@ -11,12 +11,4 @@
     <artifactId>util</artifactId>
     <packaging>jar</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.cfysu.module</groupId>
-            <artifactId>service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-
 </project>
