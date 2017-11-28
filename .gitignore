@@ -1,1 +1,12 @@
-# Created by .ignore support plugin (hsz.mobi)
+
+/.idea/
+/worker/worker.iml
+/dao/dao.iml
+/service/service.iml
+/util/util.iml
+/admin-web/admin-web.iml
+/domain/domain.iml
+/manager/manager.iml
+/mobile-web/mobile-web.iml
+/soa/soa.iml
+/soa-client/soa-client.iml
