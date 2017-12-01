@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cfysu.multi.dao.impl.UserDaoImpl" >
+  <resultMap id="userResultMap" type="com.cfysu.multi.domain.domain.User" >
+    <result column="id" property="id" jdbcType="SMALLINT" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <!-- 分页获取用户列表 -->
+  <select id="queryForPage" resultMap="userResultMap" parameterType="com.cfysu.multi.domain.query.UserQuery">
+    select * from user;
+  </select>
+
+  <select id="queryCount" resultType="Integer" parameterType="com.cfysu.multi.domain.query.UserQuery">
+    select count(1) from user;
+  </select>
+
+</mapper>
