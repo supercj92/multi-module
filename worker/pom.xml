@@ -56,8 +56,9 @@
                 <xxl.job.executor.ip>127.0.0.1</xxl.job.executor.ip>
                 <xxl.job.executor.port>8001</xxl.job.executor.port>
                 <xxl.job.executor.appname>worker</xxl.job.executor.appname>
-                <xxl.job.admin.addresses>127.0.0.1</xxl.job.admin.addresses>
+                <xxl.job.admin.addresses>http://127.0.0.1:8000</xxl.job.admin.addresses>
                 <xxl.job.executor.logpath>E:\\workspace-mine2\\worker-log</xxl.job.executor.logpath>
+                <xxl.job.accessToken></xxl.job.accessToken>
             </properties>
         </profile>
         <profile>

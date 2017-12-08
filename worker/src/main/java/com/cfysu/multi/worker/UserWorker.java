@@ -7,7 +7,7 @@ import com.xxl.job.core.log.XxlJobLogger;
 import org.springframework.stereotype.Component;
 
 @JobHander(value = "userWorker")
-@Component
+@Component("userWorker")
 public class UserWorker extends IJobHandler{
     private int counter = 0;
 
