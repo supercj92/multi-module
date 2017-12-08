@@ -1,0 +1,61 @@
+#macro (showPageInfoWithNum $paginationInfo)
+    #if ($paginationInfo)
+        <ul class="pagination">
+            #set($curPage = $paginationInfo.curPage)
+            #set($totalPage = $paginationInfo.totalPage)
+            #set($totalRow = $paginationInfo.totalRow)
+            #set($prePage = $curPage - 1)
+            #set($nextPage = $curPage + 1)
+            <li><a class="current">第$!{curPage}/$!{totalPage}页</a></li>
+            <li><a>共$!{totalRow}条记录</a></li>
+            #if($curPage gt 1 )
+                <li><a href="javascript:void(0)" onclick="turnPage($prePage)">上一页</a></li>
+            #else
+                <li class="disabled"><a>上一页</a></li>
+            #end
+
+        ##数字start
+            #set($start=1)
+        ##如果当前页大于4则显示前两页和省略号
+            #if($curPage > 4)
+                #set($start = ($curPage - 1))
+                <li><a href="javascript:void(0)" onclick="turnPage(1)">1</a></li>
+                <li><a href="javascript:void(0)" onclick="turnPage(2)">2</a></li>
+                <li class="disabled"><a>&hellip;</a></li>
+            #end
+        ##显示当前页号和前后的页号
+            #set($end=$nextPage)
+            #if($end > $totalPage)
+                #set($end = $totalPage)
+            #end
+            #if($totalPage == 0)
+                #set($end = 1)
+            #end
+            #foreach($i in [$start..$end])
+                #if($curPage == $i)
+                    <li class="disabled"><a>${i}</a></li>
+                #else
+                    <li><a href="javascript:void(0)" onclick="turnPage(${i})">${i}</a></li>
+                #end
+            #end
+
+        ##如果后面页数过多,显示省略号
+            #if($end < ($totalPage - 2))
+                <li class="disabled"><a>&hellip;</a></li>
+            #end
+            #if($end < ($totalPage - 1))
+                #set($xxx = $totalPage - 1)
+                <li><a href="javascript:void(0)" onclick="turnPage($xxx)">$xxx</a></li>
+            #end
+            #if($end < $totalPage)
+                <li><a href="javascript:void(0)" onclick="turnPage(${totalPage})">${totalPage}</a></li>
+            #end
+        ##数字end
+            #if($curPage lt $totalPage)
+                <li><a href="javascript:void(0)" onclick="turnPage($nextPage)">下一页</a></li>
+            #else
+                <li class="disabled"><a>下一页</a></li>
+            #end
+        </ul>
+    #end
+#end

@@ -1,0 +1,77 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>运行报表
+        <small>任务调度中心</small>
+    </h1>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="input-group">
+                <span class="input-group-addon">执行器</span>
+                <select class="form-control" id="jobGroup">
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="input-group">
+                <span class="input-group-addon">JobHandler</span>
+                <input type="text" class="form-control" id="executorHandler" autocomplete="on">
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <button class="btn btn-block btn-info" id="searchBtn">搜索</button>
+        </div>
+        <div class="col-xs-2">
+            <button class="btn btn-block btn-success add" type="button">+新增任务</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header hide">
+                    <h3 class="box-title">调度列表</h3>
+                </div>
+                <div class="box-body">
+                    <table id="job_list" class="table table-bordered table-striped">
+                        <thead>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>密码</th>
+                        </thead>
+                        <tbody>
+                            #if($page.resultList)
+                                #foreach($user in $page.resultList)
+                                <tr>
+                                    <td>$!user.id</td>
+                                    <td>$!user.userName</td>
+                                    <td>$!user.pwd</td>
+                                </tr>
+                                #end
+                            #end
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7"></div>
+        <div class="col-sm-5">
+            #showPageInfoWithNum($page)
+        </div>
+    </div>
+
+    <form id="pageForm" action="/user/listUser" method="post">
+        <input type="hidden" name="pageSize" value="$page.pageSize">
+        <input type="hidden" id="curPage" name="curPage" value="$page.curPage">
+    </form>
+    <script type="text/javascript" src="/asset/js/lib/jquery1.12.4.min.js"></script>
+    <script type="text/javascript" src="/asset/js/lib/bootstrap/bootstrap.min.js"></script>
+    <script>
+        function turnPage(curPage) {
+            $('#curPage').val(curPage);
+            $('#pageForm').submit();
+        }
+    </script>
+</section>

@@ -1,0 +1,10 @@
+<footer class="main-footer">
+    Powered by xxx
+    <div class="pull-right hidden-xs">
+        <strong>Copyright &copy; 2015&nbsp;
+            <a href="/" target="_blank" >xxx</a>
+            &nbsp;
+            <a href="/" target="_blank" >xxx</a>
+        </strong><!-- All rights reserved. -->
+    </div>
+</footer>
