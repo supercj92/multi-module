@@ -13,6 +13,8 @@ public class Page<T> implements Iterable<T>{
     private int totalPage;// 总页数
     private int start;// 开始条数
     private List<T> resultList;
+    private int recordsFiltered;//DataTable插件默认字段
+    private int recordsTotal;//DataTable插件默认字段
 
     public Page() {
     }
@@ -26,7 +28,7 @@ public class Page<T> implements Iterable<T>{
         this.pageSize = pageSize;
     }
 
-    public void repaginate() {
+    public void repaginateByCurPage() {
         if(pageSize<=0){
             pageSize=10;
         }
@@ -47,6 +49,25 @@ public class Page<T> implements Iterable<T>{
             totalPage = 1;
         }
         // if (currentPage > pageCount) currentPage = pageCount;
+    }
+
+    public void repaginateByStart(){
+        if(pageSize<=0){
+            pageSize=10;
+        }
+        totalPage = (totalRow + pageSize - 1) / pageSize;
+        if (totalRow == 0)
+            curPage = 1;
+        else if (curPage > totalPage)
+            curPage = totalPage;
+
+        curPage = start/pageSize + 1;
+        nextPage = (curPage < totalPage ? curPage + 1 : totalPage);
+        prePage = (curPage - 1 > 1 ? curPage - 1 : 1);
+        if (totalRow == 0) {
+            curPage = 1;
+            totalPage = 1;
+        }
     }
     public void setResultList(List<T> elements) {
         if (elements == null)
@@ -102,6 +123,8 @@ public class Page<T> implements Iterable<T>{
 
     public void setTotalRow(int totalRow) {
         this.totalRow = totalRow;
+        this.recordsFiltered = totalRow;
+        this.recordsTotal = totalRow;
     }
 
     public int getPageSize() {
@@ -142,5 +165,21 @@ public class Page<T> implements Iterable<T>{
 
     public void setStart(int start) {
         this.start = start;
+    }
+
+    public int getRecordsFiltered() {
+        return recordsFiltered;
+    }
+
+    public void setRecordsFiltered(int recordsFiltered) {
+        this.recordsFiltered = recordsFiltered;
+    }
+
+    public int getRecordsTotal() {
+        return recordsTotal;
+    }
+
+    public void setRecordsTotal(int recordsTotal) {
+        this.recordsTotal = recordsTotal;
     }
 }

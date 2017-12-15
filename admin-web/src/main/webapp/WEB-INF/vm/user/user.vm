@@ -66,8 +66,9 @@
         <input type="hidden" name="pageSize" value="$page.pageSize">
         <input type="hidden" id="curPage" name="curPage" value="$page.curPage">
     </form>
-    <script type="text/javascript" src="/asset/js/lib/jquery1.12.4.min.js"></script>
-    <script type="text/javascript" src="/asset/js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="/static/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/static/adminlte/bootstrap/js/bootstrap.min.js"></script>
     <script>
         function turnPage(curPage) {
             $('#curPage').val(curPage);

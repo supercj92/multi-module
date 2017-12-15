@@ -20,7 +20,7 @@ public abstract class BaseDaoImpl<E, Q> implements BaseDao<E, Q> {
     @Override
     public  Page<E> queryForPage(Q query, Page<E> page) {
         page.setTotalRow(queryCount(query));
-        page.repaginate();
+        page.repaginateByStart();
         List<E> resList =sqlSessionTemplate.selectList(nameSpace + ".queryForPage", query, new RowBounds(page.getStart(),page.getPageSize()));
         page.setResultList(resList);
         return page;

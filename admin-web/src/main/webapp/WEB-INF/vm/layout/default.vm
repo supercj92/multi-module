@@ -28,10 +28,6 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <!-- pace -->
-        <link rel="stylesheet" href="/static/plugins/pace/themes/pace-theme-flash.css">
-        <!-- daterangepicker -->
-        <link rel="stylesheet" href="/static/adminlte/plugins/daterangepicker/daterangepicker.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -40,7 +36,6 @@
         <!-- left -->
         #parse("layout/left.vm")
 
-        <!-- Content Wrapper. Contains page content -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             $screen_content
@@ -66,4 +61,4 @@
     ##-- common -->
     <script src="/static/js/common.1.js"></script>
     <script>var base_url = '/';</script>
-</body>    
+</body>
