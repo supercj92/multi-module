@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface UserService {
     Page<User> queryForPage(UserQuery query, Page<User> Page);
+    int insertUser(User user);
 }

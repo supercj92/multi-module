@@ -7,6 +7,9 @@ import com.cfysu.multi.service.UserService;
 import com.cfysu.multi.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallback;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import java.util.List;
 
@@ -18,5 +21,10 @@ public class UserServiceImpl implements UserService {
 
     public Page<User> queryForPage(UserQuery query, Page<User> page) {
         return userDao.queryForPage(query, page);
+    }
+
+    @Override
+    public int insertUser(User user) {
+        return 0;
     }
 }
