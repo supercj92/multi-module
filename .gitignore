@@ -23,3 +23,5 @@
 /soa-client/target/
 /util/target/
 /worker/target/
+/libra/libra.iml
+/libra/target/

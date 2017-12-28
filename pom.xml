@@ -20,6 +20,7 @@
         <module>worker</module>
         <module>soa-client</module>
         <module>soa</module>
+        <module>libra</module>
     </modules>
 
     <properties>

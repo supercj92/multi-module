@@ -1,0 +1,29 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    id="WebApp_ID" version="2.5">
+    <display-name>libra-tools-webapp</display-name>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:/spring-libra.xml</param-value>
+    </context-param>
+    
+    <!--Spring ApplicationContext 载入 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+    
+    <servlet>
+		<servlet-name>testProxyLibra</servlet-name>
+		<servlet-class>com.yhd.libra.servlets.LibraTestProxyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testProxyLibra</servlet-name>
+		<url-pattern>/testProxyLibra</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
