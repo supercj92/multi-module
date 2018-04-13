@@ -35,4 +35,10 @@ public class UserController {
     public Page<User> listUserJson(Page<User> page){
         return userManager.queryForPage(new UserQuery(), page);
     }
+
+    @RequestMapping("jRebel")
+    @ResponseBody
+    public String jRebel(){
+        return "jRebel";
+    }
 }

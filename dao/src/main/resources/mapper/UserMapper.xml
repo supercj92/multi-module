@@ -9,11 +9,7 @@
 
   <!-- 分页获取用户列表 -->
   <select id="queryForPage" resultMap="userResultMap" parameterType="com.cfysu.multi.domain.query.UserQuery">
-    select * from user;
-  </select>
-
-  <select id="queryCount" resultType="Integer" parameterType="com.cfysu.multi.domain.query.UserQuery">
-    select count(1) from user;
+    select * from user
   </select>
 
 </mapper>

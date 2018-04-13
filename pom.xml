@@ -182,5 +182,13 @@
         </dependency>
         <!--jdbc mysql驱动 end-->
 
+        <!--mybatis分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.0.4</version>
+        </dependency>
+        <!--mybatis分页插件 end-->
+
     </dependencies>
 </project>
